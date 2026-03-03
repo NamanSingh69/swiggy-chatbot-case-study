@@ -64,7 +64,7 @@ function getNodeCenter(n: FlowNode) {
 export default function ArchitectureBreakdown() {
     return (
         <section id="architecture" className="relative py-24 sm:py-32 grid-bg">
-            <div className="max-w-[1400px] mx-auto pl-10 sm:pl-14 lg:pl-20 pr-6 sm:pr-8 lg:pr-10">
+            <div className="max-w-[1200px] mx-auto px-8 sm:px-12 lg:px-16">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

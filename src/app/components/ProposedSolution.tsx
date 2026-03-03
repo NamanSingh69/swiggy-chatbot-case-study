@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function ProposedSolution() {
     return (
         <section id="solution" className="relative py-24 sm:py-32">
-            <div className="max-w-[1400px] mx-auto pl-10 sm:pl-14 lg:pl-20 pr-6 sm:pr-8 lg:pr-10">
+            <div className="max-w-[1200px] mx-auto px-8 sm:px-12 lg:px-16">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function ProposedSolution() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="glass rounded-2xl p-6 sm:p-8 mb-14"
+                    className="glass rounded-2xl p-8 sm:p-10 mb-14"
                 >
                     <h3 className="text-2xl xl:text-3xl font-bold text-danger mb-6 flex items-center gap-3">
                         <span className="w-2 h-2 bg-danger rounded-full animate-pulse" />
@@ -40,7 +40,7 @@ export default function ProposedSolution() {
                     </h3>
                     <div className="space-y-6 text-base xl:text-lg text-foreground/80 leading-relaxed">
                         <div className="glass rounded-xl p-5">
-                            <h4 className="text-base font-semibold text-warning mb-2">
+                            <h4 className="text-lg font-semibold text-warning mb-3">
                                 1. Stateless Tier Transitions
                             </h4>
                             <p>
