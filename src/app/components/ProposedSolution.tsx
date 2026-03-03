@@ -32,14 +32,14 @@ export default function ProposedSolution() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="glass rounded-2xl p-8 sm:p-10 mb-14"
+                    className="glass rounded-2xl p-8 sm:p-10 mb-24"
                 >
-                    <h3 className="text-2xl xl:text-3xl font-bold text-danger mb-6 flex items-center gap-3">
+                    <h3 className="text-2xl xl:text-3xl font-bold text-danger mb-6 flex items-center justify-center gap-3">
                         <span className="w-2 h-2 bg-danger rounded-full animate-pulse" />
                         Root Cause Analysis
                     </h3>
                     <div className="space-y-6 text-base xl:text-lg text-foreground/80 leading-relaxed">
-                        <div className="glass rounded-xl p-6">
+                        <div className="glass rounded-xl p-6 text-center">
                             <h4 className="text-lg font-semibold text-warning mb-3">
                                 1. Stateless Tier Transitions
                             </h4>
@@ -55,7 +55,7 @@ export default function ProposedSolution() {
                             </p>
                         </div>
 
-                        <div className="glass rounded-xl p-6">
+                        <div className="glass rounded-xl p-6 text-center">
                             <h4 className="text-lg font-semibold text-warning mb-3">
                                 2. VoIP Queue Without Execution Verification
                             </h4>
@@ -69,7 +69,7 @@ export default function ProposedSolution() {
                             </p>
                         </div>
 
-                        <div className="glass rounded-xl p-6">
+                        <div className="glass rounded-xl p-6 text-center">
                             <h4 className="text-lg font-semibold text-warning mb-3">
                                 3. Intent Classification Bypass via Semantic Framing
                             </h4>
@@ -98,13 +98,13 @@ export default function ProposedSolution() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="glass rounded-2xl p-6 sm:p-8 mb-14"
+                    className="glass rounded-2xl p-6 sm:p-8 mb-24"
                 >
-                    <h3 className="text-2xl xl:text-3xl font-bold text-success mb-6 flex items-center gap-3">
+                    <h3 className="text-2xl xl:text-3xl font-bold text-success mb-6 flex items-center justify-center gap-3">
                         <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
                         Unified State Manager Architecture
                     </h3>
-                    <p className="text-base xl:text-lg text-muted mb-8">
+                    <p className="text-base xl:text-lg text-muted mb-8 text-center">
                         Replace stateless tier transitions with a centralized conversation state
                         manager that persists context across all tiers:
                     </p>
@@ -218,9 +218,9 @@ class StateManager {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="glass rounded-2xl p-6 sm:p-8 mb-14"
+                    className="glass rounded-2xl p-6 sm:p-8 mb-24"
                 >
-                    <h3 className="text-2xl xl:text-3xl font-bold gradient-text mb-8">
+                    <h3 className="text-2xl xl:text-3xl font-bold gradient-text mb-8 text-center">
                         Key Recommendations
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -248,7 +248,7 @@ class StateManager {
                         ].map((rec) => (
                             <div
                                 key={rec.num}
-                                className="glass rounded-xl p-5 transition-all hover:border-border-hover"
+                                className="glass rounded-xl p-5 transition-all hover:border-border-hover text-center"
                             >
                                 <div className="text-2xl font-bold text-cyan/30 font-mono mb-2">
                                     {rec.num}

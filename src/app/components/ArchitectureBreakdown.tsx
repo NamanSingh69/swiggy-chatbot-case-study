@@ -244,7 +244,7 @@ export default function ArchitectureBreakdown() {
                     ].map((card) => (
                         <div
                             key={card.title}
-                            className="glass rounded-xl p-6 transition-all hover:border-border-hover"
+                            className="glass rounded-xl p-6 transition-all hover:border-border-hover text-center"
                         >
                             <div className="text-2xl mb-3">{card.icon}</div>
                             <h3
