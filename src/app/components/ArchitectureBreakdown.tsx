@@ -64,7 +64,7 @@ function getNodeCenter(n: FlowNode) {
 export default function ArchitectureBreakdown() {
     return (
         <section id="architecture" className="relative py-24 sm:py-32 grid-bg">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -76,10 +76,10 @@ export default function ArchitectureBreakdown() {
                     <span className="badge bg-warning/10 text-warning border border-warning/20 mb-4">
                         Architecture
                     </span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold mt-4">
                         The <span className="gradient-text">Decision Tree</span>
                     </h2>
-                    <p className="mt-4 text-muted max-w-2xl mx-auto">
+                    <p className="mt-6 text-lg sm:text-xl xl:text-2xl text-muted max-w-3xl mx-auto">
                         How the rigid NLP intent classifier created an exploitable bypass
                         path and led to a broken execution pipeline.
                     </p>
@@ -91,7 +91,7 @@ export default function ArchitectureBreakdown() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="glass rounded-2xl p-6 sm:p-8 overflow-x-auto"
+                    className="glass rounded-2xl p-6 sm:p-8 overflow-x-auto flex justify-center"
                 >
                     <div className="min-w-[750px] relative mx-auto" style={{ width: 800, height: 780 }}>
                         <svg
@@ -248,12 +248,12 @@ export default function ArchitectureBreakdown() {
                         >
                             <div className="text-2xl mb-3">{card.icon}</div>
                             <h3
-                                className="text-base font-semibold mb-2"
+                                className="text-lg xl:text-xl font-semibold mb-3"
                                 style={{ color: getColor(card.color) }}
                             >
                                 {card.title}
                             </h3>
-                            <p className="text-sm text-muted leading-relaxed">{card.desc}</p>
+                            <p className="text-base text-muted leading-relaxed">{card.desc}</p>
                         </div>
                     ))}
                 </motion.div>

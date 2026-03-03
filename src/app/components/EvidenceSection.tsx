@@ -239,7 +239,7 @@ export default function EvidenceSection() {
 
     return (
         <section id="evidence" className="relative py-24 sm:py-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -251,10 +251,10 @@ export default function EvidenceSection() {
                     <span className="badge bg-danger/10 text-danger border border-danger/20 mb-4">
                         Evidence
                     </span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold mt-4">
                         The <span className="gradient-text-warm">Raw Recording</span>
                     </h2>
-                    <p className="mt-4 text-muted max-w-2xl mx-auto">
+                    <p className="mt-6 text-lg sm:text-xl xl:text-2xl text-muted max-w-3xl mx-auto">
                         Screen recording and annotated transcript of the full interaction,
                         from initial rejection to final context loop.
                     </p>
@@ -332,7 +332,7 @@ export default function EvidenceSection() {
                                     <div className="w-3 h-3 rounded-full bg-warning/60" />
                                     <div className="w-3 h-3 rounded-full bg-success/60" />
                                 </div>
-                                <span className="text-sm font-mono text-muted">transcript.log</span>
+                                <span className="text-base font-mono text-muted">transcript.log</span>
                             </div>
                             {/* Legend */}
                             <div className="hidden sm:flex items-center gap-3 text-[10px]">
@@ -360,14 +360,14 @@ export default function EvidenceSection() {
                                             </span>
                                         )}
                                         <div className="min-w-0">
-                                            <span className={`text-xs font-semibold ${getSpeakerColor(line.speaker)}`}>
+                                            <span className={`text-sm xl:text-base font-semibold ${getSpeakerColor(line.speaker)}`}>
                                                 {line.speaker}
                                             </span>
-                                            <p className="text-sm text-foreground/80 leading-relaxed break-words">
+                                            <p className="text-base xl:text-lg text-foreground/80 leading-relaxed break-words mt-1">
                                                 {line.text}
                                             </p>
                                             {line.annotation && (
-                                                <p className={`text-[11px] font-mono mt-1 ${getAnnotationColor(line.type)}`}>
+                                                <p className={`text-xs xl:text-sm font-mono mt-2 ${getAnnotationColor(line.type)}`}>
                                                     → {line.annotation}
                                                 </p>
                                             )}

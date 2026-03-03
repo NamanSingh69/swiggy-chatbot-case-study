@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function ProposedSolution() {
     return (
         <section id="solution" className="relative py-24 sm:py-32">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -17,10 +17,10 @@ export default function ProposedSolution() {
                     <span className="badge bg-success/10 text-success border border-success/20 mb-4">
                         Solution
                     </span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold mt-4">
                         The <span className="gradient-text">Proposed Fix</span>
                     </h2>
-                    <p className="mt-4 text-muted max-w-2xl mx-auto">
+                    <p className="mt-6 text-lg lg:text-xl xl:text-2xl text-muted max-w-3xl mx-auto">
                         Why the context window drops between bot tiers, and how to patch the
                         pipeline using a unified state manager.
                     </p>
@@ -34,11 +34,11 @@ export default function ProposedSolution() {
                     transition={{ duration: 0.6 }}
                     className="glass rounded-2xl p-6 sm:p-8 mb-8"
                 >
-                    <h3 className="text-xl font-bold text-danger mb-4 flex items-center gap-2">
+                    <h3 className="text-2xl xl:text-3xl font-bold text-danger mb-6 flex items-center gap-3">
                         <span className="w-2 h-2 bg-danger rounded-full animate-pulse" />
                         Root Cause Analysis
                     </h3>
-                    <div className="space-y-6 text-sm text-foreground/80 leading-relaxed">
+                    <div className="space-y-6 text-base xl:text-lg text-foreground/80 leading-relaxed">
                         <div className="glass rounded-xl p-5">
                             <h4 className="text-base font-semibold text-warning mb-2">
                                 1. Stateless Tier Transitions
@@ -100,11 +100,11 @@ export default function ProposedSolution() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="glass rounded-2xl p-6 sm:p-8 mb-8"
                 >
-                    <h3 className="text-xl font-bold text-success mb-4 flex items-center gap-2">
+                    <h3 className="text-2xl xl:text-3xl font-bold text-success mb-6 flex items-center gap-3">
                         <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
                         Unified State Manager Architecture
                     </h3>
-                    <p className="text-sm text-muted mb-6">
+                    <p className="text-base xl:text-lg text-muted mb-8">
                         Replace stateless tier transitions with a centralized conversation state
                         manager that persists context across all tiers:
                     </p>
@@ -155,7 +155,7 @@ export default function ProposedSolution() {
 
                     {/* Code snippet */}
                     <div className="code-block p-4 overflow-x-auto">
-                        <pre className="text-foreground/80">
+                        <pre className="text-foreground/80 text-sm md:text-base xl:text-lg">
                             <code>{`// Proposed: Unified Conversation State Manager
 interface ConversationState {
   sessionId: string;
@@ -220,7 +220,7 @@ class StateManager {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="glass rounded-2xl p-6 sm:p-8 mb-8"
                 >
-                    <h3 className="text-xl font-bold gradient-text mb-6">
+                    <h3 className="text-2xl xl:text-3xl font-bold gradient-text mb-8">
                         Key Recommendations
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -253,10 +253,10 @@ class StateManager {
                                 <div className="text-2xl font-bold text-cyan/30 font-mono mb-2">
                                     {rec.num}
                                 </div>
-                                <h4 className="text-sm font-semibold text-foreground mb-2">
+                                <h4 className="text-base xl:text-xl font-semibold text-foreground mb-3">
                                     {rec.title}
                                 </h4>
-                                <p className="text-xs text-muted leading-relaxed">{rec.desc}</p>
+                                <p className="text-sm xl:text-base text-muted leading-relaxed">{rec.desc}</p>
                             </div>
                         ))}
                     </div>
