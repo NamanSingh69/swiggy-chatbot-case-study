@@ -39,7 +39,7 @@ export default function ProposedSolution() {
                         Root Cause Analysis
                     </h3>
                     <div className="space-y-6 text-base xl:text-lg text-foreground/80 leading-relaxed">
-                        <div className="glass rounded-xl p-5">
+                        <div className="glass rounded-xl p-6">
                             <h4 className="text-lg font-semibold text-warning mb-3">
                                 1. Stateless Tier Transitions
                             </h4>
@@ -55,8 +55,8 @@ export default function ProposedSolution() {
                             </p>
                         </div>
 
-                        <div className="glass rounded-xl p-5">
-                            <h4 className="text-base font-semibold text-warning mb-2">
+                        <div className="glass rounded-xl p-6">
+                            <h4 className="text-lg font-semibold text-warning mb-3">
                                 2. VoIP Queue Without Execution Verification
                             </h4>
                             <p>
@@ -69,8 +69,8 @@ export default function ProposedSolution() {
                             </p>
                         </div>
 
-                        <div className="glass rounded-xl p-5">
-                            <h4 className="text-base font-semibold text-warning mb-2">
+                        <div className="glass rounded-xl p-6">
+                            <h4 className="text-lg font-semibold text-warning mb-3">
                                 3. Intent Classification Bypass via Semantic Framing
                             </h4>
                             <p>
