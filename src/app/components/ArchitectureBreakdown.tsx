@@ -13,16 +13,16 @@ interface FlowNode {
 }
 
 const nodes: FlowNode[] = [
-    { id: "input", label: "User Input", sublabel: '"I want to cancel my order"', color: "cyan", x: 350, y: 30, width: 200 },
-    { id: "nlp", label: "NLP Intent Classifier", sublabel: "Pattern Matching Engine", color: "cyan", x: 350, y: 130, width: 200 },
-    { id: "cancel", label: "intent: order_cancellation", sublabel: "Hardcoded rejection path", color: "danger", x: 130, y: 250, width: 220 },
-    { id: "escalate", label: "intent: general_escalation", sublabel: '"I have a concern"', color: "success", x: 550, y: 250, width: 220 },
-    { id: "reject", label: "REJECTION WALL", sublabel: "Emotional manipulation + deflection", color: "danger", x: 130, y: 370, width: 220 },
-    { id: "queue", label: "VoIP Callback Queue", sublabel: "Agent assignment system", color: "warning", x: 550, y: 370, width: 220 },
-    { id: "dead", label: "❌ USER BLOCKED", sublabel: "Cannot reach human agent", color: "danger", x: 130, y: 490, width: 220 },
-    { id: "voip_fail", label: "⚠️ EXECUTION FAILURE", sublabel: "Call queued but never initiated", color: "warning", x: 550, y: 490, width: 220 },
-    { id: "context_drop", label: "CONTEXT DROP", sublabel: "New session — history lost", color: "purple", x: 350, y: 590, width: 200 },
-    { id: "loop", label: "🔄 INFINITE LOOP", sublabel: "Generic automated responses", color: "purple", x: 350, y: 700, width: 200 },
+    { id: "input", label: "User Input", sublabel: '"I want to cancel my order"', color: "cyan", x: 375, y: 30, width: 250 },
+    { id: "nlp", label: "NLP Intent Classifier", sublabel: "Pattern Matching Engine", color: "cyan", x: 375, y: 160, width: 250 },
+    { id: "cancel", label: "intent: order_cancellation", sublabel: "Hardcoded rejection path", color: "danger", x: 100, y: 310, width: 280 },
+    { id: "escalate", label: "intent: general_escalation", sublabel: '"I have a concern"', color: "success", x: 620, y: 310, width: 280 },
+    { id: "reject", label: "REJECTION WALL", sublabel: "Emotional manipulation + deflection", color: "danger", x: 100, y: 460, width: 280 },
+    { id: "queue", label: "VoIP Callback Queue", sublabel: "Agent assignment system", color: "warning", x: 620, y: 460, width: 280 },
+    { id: "dead", label: "❌ USER BLOCKED", sublabel: "Cannot reach human agent", color: "danger", x: 100, y: 610, width: 280 },
+    { id: "voip_fail", label: "⚠️ EXECUTION FAILURE", sublabel: "Call queued but never initiated", color: "warning", x: 620, y: 610, width: 280 },
+    { id: "context_drop", label: "CONTEXT DROP", sublabel: "New session — history lost", color: "purple", x: 375, y: 760, width: 250 },
+    { id: "loop", label: "🔄 INFINITE LOOP", sublabel: "Generic automated responses", color: "purple", x: 375, y: 900, width: 250 },
 ];
 
 interface FlowEdge {
@@ -57,14 +57,14 @@ function getColor(c: string) {
 }
 
 function getNodeCenter(n: FlowNode) {
-    const w = n.width || 180;
-    return { x: n.x + w / 2, y: n.y + 35 };
+    const w = n.width || 250;
+    return { x: n.x + w / 2, y: n.y + 42 };
 }
 
 export default function ArchitectureBreakdown() {
     return (
         <section id="architecture" className="relative py-24 sm:py-32 grid-bg">
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -93,9 +93,9 @@ export default function ArchitectureBreakdown() {
                     transition={{ duration: 0.8 }}
                     className="glass rounded-2xl p-6 sm:p-8 overflow-x-auto flex justify-center"
                 >
-                    <div className="min-w-[750px] relative mx-auto" style={{ width: 800, height: 780 }}>
+                    <div className="min-w-[900px] relative mx-auto" style={{ width: 1000, height: 1000 }}>
                         <svg
-                            viewBox="0 0 800 780"
+                            viewBox="0 0 1000 1000"
                             className="absolute inset-0 w-full h-full"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ export default function ArchitectureBreakdown() {
                                 const toNode = nodes.find((n) => n.id === edge.to)!;
                                 const fromC = getNodeCenter(fromNode);
                                 const toC = getNodeCenter(toNode);
-                                const fromBottom = { x: fromC.x, y: fromNode.y + 70 };
+                                const fromBottom = { x: fromC.x, y: fromNode.y + 85 };
                                 const toTop = { x: toC.x, y: toNode.y };
 
                                 // Curve for diagonal lines
@@ -164,7 +164,7 @@ export default function ArchitectureBreakdown() {
                                                 x={(fromBottom.x + toTop.x) / 2 + (fromC.x < toC.x ? -60 : 10)}
                                                 y={midY - 5}
                                                 fill={getColor(edge.color)}
-                                                fontSize="10"
+                                                fontSize="12"
                                                 fontFamily="'JetBrains Mono', monospace"
                                                 opacity={0.8}
                                             >
@@ -190,21 +190,21 @@ export default function ArchitectureBreakdown() {
                                     style={{
                                         left: node.x,
                                         top: node.y,
-                                        width: node.width || 180,
-                                        height: 70,
+                                        width: node.width || 250,
+                                        height: 85,
                                         borderColor: `${nodeColor}40`,
                                         background: `linear-gradient(135deg, ${nodeColor}10, ${nodeColor}05)`,
                                         boxShadow: `0 0 20px ${nodeColor}10`,
                                     }}
                                 >
                                     <div
-                                        className="text-xs font-semibold font-mono"
+                                        className="text-sm font-bold font-mono"
                                         style={{ color: nodeColor }}
                                     >
                                         {node.label}
                                     </div>
                                     {node.sublabel && (
-                                        <div className="text-[10px] text-muted mt-1 leading-tight">
+                                        <div className="text-xs text-muted mt-1.5 leading-tight">
                                             {node.sublabel}
                                         </div>
                                     )}

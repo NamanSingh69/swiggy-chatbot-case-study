@@ -239,7 +239,7 @@ export default function EvidenceSection() {
 
     return (
         <section id="evidence" className="relative py-24 sm:py-32">
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -296,7 +296,7 @@ export default function EvidenceSection() {
                         </div>
 
                         {/* Keyframe thumbnails */}
-                        <div className="mt-4 grid grid-cols-3 gap-3 px-2">
+                        <div className="mt-6 grid grid-cols-3 gap-4 px-2">
                             {[
                                 { src: "/assets/keyframe-rejection.png", label: "Rejection Wall" },
                                 { src: "/assets/keyframe-bypass.png", label: "Semantic Bypass" },
@@ -306,10 +306,10 @@ export default function EvidenceSection() {
                                     <img
                                         src={kf.src}
                                         alt={kf.label}
-                                        className="w-full h-28 sm:h-32 lg:h-36 object-cover rounded-lg border-2 border-border/60 transition-all group-hover:border-cyan/50 group-hover:scale-[1.03] shadow-lg"
+                                        className="w-full h-40 sm:h-48 lg:h-56 object-cover rounded-xl border-2 border-border/60 transition-all group-hover:border-cyan/50 group-hover:scale-[1.02] shadow-xl"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-lg flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span className="text-xs text-white font-semibold">{kf.label}</span>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-xl flex items-end p-3">
+                                        <span className="text-sm font-semibold text-white">{kf.label}</span>
                                     </div>
                                 </div>
                             ))}

@@ -70,7 +70,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+                    className="mt-16 flex flex-wrap items-center justify-center gap-8 sm:gap-12"
                 >
                     {[
                         { label: "Bot Tiers Traversed", value: "3", color: "text-cyan" },
@@ -79,10 +79,10 @@ export default function HeroSection() {
                         { label: "Resolution", value: "None", color: "text-purple" },
                     ].map((stat) => (
                         <div key={stat.label} className="text-center">
-                            <div className={`text-3xl sm:text-4xl font-bold ${stat.color}`}>
+                            <div className={`text-4xl sm:text-5xl font-bold ${stat.color}`}>
                                 {stat.value}
                             </div>
-                            <div className="text-sm text-muted mt-1">{stat.label}</div>
+                            <div className="text-sm sm:text-base text-muted mt-2">{stat.label}</div>
                         </div>
                     ))}
                 </motion.div>
@@ -92,7 +92,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.2 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
                 >
                     <span className="text-xs text-muted tracking-widest uppercase">
                         Scroll to explore
