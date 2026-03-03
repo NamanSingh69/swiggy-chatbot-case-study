@@ -239,7 +239,7 @@ export default function EvidenceSection() {
 
     return (
         <section id="evidence" className="relative py-24 sm:py-32">
-            <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
+            <div className="max-w-[1400px] mx-auto pl-10 sm:pl-14 lg:pl-20 pr-6 sm:pr-8 lg:pr-10">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

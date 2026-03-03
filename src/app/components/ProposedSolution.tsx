@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function ProposedSolution() {
     return (
         <section id="solution" className="relative py-24 sm:py-32">
-            <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
+            <div className="max-w-[1400px] mx-auto pl-10 sm:pl-14 lg:pl-20 pr-6 sm:pr-8 lg:pr-10">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function ProposedSolution() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="glass rounded-2xl p-6 sm:p-8 mb-8"
+                    className="glass rounded-2xl p-6 sm:p-8 mb-14"
                 >
                     <h3 className="text-2xl xl:text-3xl font-bold text-danger mb-6 flex items-center gap-3">
                         <span className="w-2 h-2 bg-danger rounded-full animate-pulse" />
@@ -98,7 +98,7 @@ export default function ProposedSolution() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="glass rounded-2xl p-6 sm:p-8 mb-8"
+                    className="glass rounded-2xl p-6 sm:p-8 mb-14"
                 >
                     <h3 className="text-2xl xl:text-3xl font-bold text-success mb-6 flex items-center gap-3">
                         <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
@@ -218,7 +218,7 @@ class StateManager {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="glass rounded-2xl p-6 sm:p-8 mb-8"
+                    className="glass rounded-2xl p-6 sm:p-8 mb-14"
                 >
                     <h3 className="text-2xl xl:text-3xl font-bold gradient-text mb-8">
                         Key Recommendations
