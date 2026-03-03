@@ -239,7 +239,7 @@ export default function EvidenceSection() {
 
     return (
         <section id="evidence" className="relative py-24 sm:py-32">
-            <div className="max-w-[1200px] mx-auto px-8 sm:px-12 lg:px-16">
+            <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -270,13 +270,13 @@ export default function EvidenceSection() {
                         transition={{ duration: 0.7 }}
                         className="glass rounded-2xl p-4 glow-cyan"
                     >
-                        <div className="relative rounded-xl overflow-hidden bg-black">
+                        <div className="relative rounded-xl overflow-hidden bg-black max-h-[600px] flex items-center justify-center">
                             <video
                                 ref={videoRef}
                                 controls
                                 playsInline
                                 preload="metadata"
-                                className="w-full h-auto"
+                                className="w-full h-full object-contain max-h-[600px]"
                                 poster="/assets/keyframe-rejection.png"
                             >
                                 <source src="/assets/demo.mp4" type="video/mp4" />
@@ -322,7 +322,7 @@ export default function EvidenceSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                        className="glass rounded-2xl flex flex-col"
+                        className="glass rounded-2xl flex flex-col h-full overflow-hidden"
                     >
                         {/* Transcript header */}
                         <div className="flex items-center justify-between px-5 py-4 border-b border-border">
@@ -343,7 +343,7 @@ export default function EvidenceSection() {
                         </div>
 
                         {/* Scrollable transcript */}
-                        <div className="flex-1 overflow-y-auto max-h-[600px] p-4 space-y-1">
+                        <div className="flex-1 overflow-y-auto p-4 space-y-1">
                             {transcriptData.map((line, i) => (
                                 <motion.div
                                     key={i}

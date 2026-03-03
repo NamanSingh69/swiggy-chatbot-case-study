@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function ProposedSolution() {
     return (
         <section id="solution" className="relative py-24 sm:py-32">
-            <div className="max-w-[1200px] mx-auto px-8 sm:px-12 lg:px-16">
+            <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
