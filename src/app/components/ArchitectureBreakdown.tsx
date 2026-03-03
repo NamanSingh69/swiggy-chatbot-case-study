@@ -76,10 +76,10 @@ export default function ArchitectureBreakdown() {
                     <span className="badge bg-warning/10 text-warning border border-warning/20 mb-4">
                         Architecture
                     </span>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold mt-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4">
                         The <span className="gradient-text">Decision Tree</span>
                     </h2>
-                    <p className="mt-6 text-lg sm:text-xl xl:text-2xl text-muted max-w-3xl mx-auto">
+                    <p className="mt-4 text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto">
                         How the rigid NLP intent classifier created an exploitable bypass
                         path and led to a broken execution pipeline.
                     </p>

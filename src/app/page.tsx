@@ -24,11 +24,17 @@ export default function Home() {
       </nav>
 
       <HeroSection />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="w-full py-12 sm:py-16 flex items-center justify-center">
+        <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
       <EvidenceSection />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="w-full py-12 sm:py-16 flex items-center justify-center">
+        <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
       <ArchitectureBreakdown />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="w-full py-12 sm:py-16 flex items-center justify-center">
+        <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
       <ProposedSolution />
     </main>
   );

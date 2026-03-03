@@ -45,7 +45,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mt-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight tracking-tight"
+                    className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight"
                 >
                     <span className="text-foreground">Edge-Case Routing Failures</span>
                     <br />
@@ -57,7 +57,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mt-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-muted max-w-4xl mx-auto leading-relaxed"
+                    className="mt-8 text-lg sm:text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed"
                 >
                     A technical teardown of an{" "}
                     <span className="text-warning font-medium">infinite context loop</span> and{" "}

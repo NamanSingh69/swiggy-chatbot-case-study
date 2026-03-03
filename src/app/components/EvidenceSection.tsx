@@ -251,10 +251,10 @@ export default function EvidenceSection() {
                     <span className="badge bg-danger/10 text-danger border border-danger/20 mb-4">
                         Evidence
                     </span>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold mt-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4">
                         The <span className="gradient-text-warm">Raw Recording</span>
                     </h2>
-                    <p className="mt-6 text-lg sm:text-xl xl:text-2xl text-muted max-w-3xl mx-auto">
+                    <p className="mt-4 text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto">
                         Screen recording and annotated transcript of the full interaction,
                         from initial rejection to final context loop.
                     </p>
@@ -296,7 +296,7 @@ export default function EvidenceSection() {
                         </div>
 
                         {/* Keyframe thumbnails */}
-                        <div className="mt-4 grid grid-cols-3 gap-2 px-2">
+                        <div className="mt-4 grid grid-cols-3 gap-3 px-2">
                             {[
                                 { src: "/assets/keyframe-rejection.png", label: "Rejection Wall" },
                                 { src: "/assets/keyframe-bypass.png", label: "Semantic Bypass" },
@@ -306,10 +306,10 @@ export default function EvidenceSection() {
                                     <img
                                         src={kf.src}
                                         alt={kf.label}
-                                        className="w-full h-20 object-cover rounded-lg border border-border transition-all group-hover:border-cyan/40 group-hover:scale-[1.02]"
+                                        className="w-full h-28 sm:h-32 lg:h-36 object-cover rounded-lg border-2 border-border/60 transition-all group-hover:border-cyan/50 group-hover:scale-[1.03] shadow-lg"
                                     />
-                                    <div className="absolute inset-0 bg-black/50 rounded-lg flex items-end p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span className="text-[10px] text-white font-medium">{kf.label}</span>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-lg flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span className="text-xs text-white font-semibold">{kf.label}</span>
                                     </div>
                                 </div>
                             ))}

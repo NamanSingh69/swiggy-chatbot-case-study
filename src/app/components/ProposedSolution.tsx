@@ -17,10 +17,10 @@ export default function ProposedSolution() {
                     <span className="badge bg-success/10 text-success border border-success/20 mb-4">
                         Solution
                     </span>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold mt-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4">
                         The <span className="gradient-text">Proposed Fix</span>
                     </h2>
-                    <p className="mt-6 text-lg lg:text-xl xl:text-2xl text-muted max-w-3xl mx-auto">
+                    <p className="mt-4 text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto">
                         Why the context window drops between bot tiers, and how to patch the
                         pipeline using a unified state manager.
                     </p>
@@ -273,9 +273,10 @@ class StateManager {
                     <h3 className="text-xl font-bold text-foreground mb-2">
                         Authored by Naman Singh
                     </h3>
-                    <p className="text-sm text-muted mb-6 max-w-lg mx-auto">
-                        AI security researcher with experience in adversarial prompt
-                        engineering, LLM jailbreaking, and conversational AI architecture.
+                    <p className="text-base text-muted mb-6 max-w-lg mx-auto">
+                        Second year B.Tech Computer Engineering student with a
+                        passion for AI systems, security research, and building
+                        things that matter.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <a
