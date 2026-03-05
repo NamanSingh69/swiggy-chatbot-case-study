@@ -33,7 +33,7 @@ test.describe('Layout Formatting and Spacing', () => {
         await expect(architectureSection).toHaveClass(/py-24|py-32/);
     });
 
-    test('Containers use max-w-7xl constraint', async ({ page }) => {
+    test('Containers use max-w-7xl constraint and are centrally aligned', async ({ page }) => {
         // max-w-7xl in Tailwind is 80rem = 1280px
         const sections = ['#hero', '#evidence', '#architecture', '#solution'];
 
@@ -41,12 +41,13 @@ test.describe('Layout Formatting and Spacing', () => {
             const innerContainer = page.locator(`${id} > div.max-w-7xl`);
             await expect(innerContainer).toBeVisible();
 
-            const width = await innerContainer.evaluate((node) => {
-                return window.getComputedStyle(node).maxWidth;
-            });
-            // Chrome often returns '1280px' for max-w-7xl, or 'none' if overridden
-            // Just assert it has the class
-            await expect(innerContainer).toHaveClass(/max-w-7xl/);
+            const box = await innerContainer.boundingBox();
+            expect(box).not.toBeNull();
+
+            // If the viewport is 1710px wide, and max-w is 1280px, it MUST be centered
+            // meaning box.x (left offset) should be roughly (1710 - 1280) / 2 = ~215px
+            // A left-aligned failure would have an x offset of 0.
+            expect(box!.x).toBeGreaterThan(50);
         }
     });
 
