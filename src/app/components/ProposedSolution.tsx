@@ -298,7 +298,7 @@ class StateManager {
                             GitHub Profile
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/namansingh69/"
+                            href="https://www.linkedin.com/in/naman-singh419/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-blue-500/15 text-blue-400 border border-blue-500/25 text-base font-bold transition-all hover:bg-blue-500/25 hover:scale-[1.04] hover:shadow-lg hover:shadow-blue-500/10"
