@@ -91,132 +91,137 @@ export default function ArchitectureBreakdown() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="glass rounded-2xl p-4 sm:p-8 overflow-hidden flex justify-center w-full"
+                    className="glass rounded-2xl p-4 sm:p-8 flex justify-center w-full"
                 >
-                    {/* Responsive Scaling Wrapper */}
-                    <div className="w-full relative mx-auto flex justify-center overflow-x-auto pb-4">
-                        <div
-                            className="relative shrink-0 origin-top transform scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 transition-transform duration-300"
-                            style={{ width: 1000, height: 1000 }}
+                    {/* Pure SVG Scalable Container */}
+                    <div className="w-full max-w-[1000px] aspect-square relative mx-auto">
+                        <svg
+                            viewBox="0 0 1000 1000"
+                            className="w-full h-full"
+                            style={{ overflow: "visible" }}
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
                         >
-                            <svg
-                                viewBox="0 0 1000 1000"
-                                className="absolute inset-0 w-full h-full"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <defs>
-                                    {["cyan", "danger", "success", "warning", "purple"].map((c) => (
-                                        <marker
-                                            key={c}
-                                            id={`arrow-${c}`}
-                                            viewBox="0 0 10 7"
-                                            refX="10"
-                                            refY="3.5"
-                                            markerWidth="8"
-                                            markerHeight="6"
-                                            orient="auto-start-reverse"
-                                        >
-                                            <path d="M 0 0 L 10 3.5 L 0 7 z" fill={getColor(c)} />
-                                        </marker>
-                                    ))}
-                                    {["cyan", "danger", "success", "warning", "purple"].map((c) => (
-                                        <linearGradient key={`glow-${c}`} id={`glow-${c}`} x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stopColor={getColor(c)} stopOpacity="0.6" />
-                                            <stop offset="100%" stopColor={getColor(c)} stopOpacity="0.1" />
-                                        </linearGradient>
-                                    ))}
-                                </defs>
-
-                                {/* Edges */}
-                                {edges.map((edge, i) => {
-                                    const fromNode = nodes.find((n) => n.id === edge.from)!;
-                                    const toNode = nodes.find((n) => n.id === edge.to)!;
-                                    const fromC = getNodeCenter(fromNode);
-                                    const toC = getNodeCenter(toNode);
-                                    const fromBottom = { x: fromC.x, y: fromNode.y + 85 };
-                                    const toTop = { x: toC.x, y: toNode.y };
-
-                                    // Curve for diagonal lines
-                                    const isDiagonal = Math.abs(fromC.x - toC.x) > 50;
-                                    const midY = (fromBottom.y + toTop.y) / 2;
-
-                                    return (
-                                        <g key={i}>
-                                            {isDiagonal ? (
-                                                <path
-                                                    d={`M ${fromBottom.x} ${fromBottom.y} C ${fromBottom.x} ${midY}, ${toTop.x} ${midY}, ${toTop.x} ${toTop.y}`}
-                                                    stroke={getColor(edge.color)}
-                                                    strokeWidth="2"
-                                                    strokeDasharray={edge.color === "danger" ? "6 4" : "none"}
-                                                    markerEnd={`url(#arrow-${edge.color})`}
-                                                    opacity={0.7}
-                                                />
-                                            ) : (
-                                                <line
-                                                    x1={fromBottom.x}
-                                                    y1={fromBottom.y}
-                                                    x2={toTop.x}
-                                                    y2={toTop.y}
-                                                    stroke={getColor(edge.color)}
-                                                    strokeWidth="2"
-                                                    markerEnd={`url(#arrow-${edge.color})`}
-                                                    opacity={0.7}
-                                                />
-                                            )}
-                                            {edge.label && (
-                                                <text
-                                                    x={(fromBottom.x + toTop.x) / 2 + (fromC.x < toC.x ? -60 : 10)}
-                                                    y={midY - 5}
-                                                    fill={getColor(edge.color)}
-                                                    fontSize="12"
-                                                    fontFamily="'JetBrains Mono', monospace"
-                                                    opacity={0.8}
-                                                >
-                                                    {edge.label}
-                                                </text>
-                                            )}
-                                        </g>
-                                    );
-                                })}
-                            </svg>
-
-                            {/* Nodes */}
-                            {nodes.map((node, i) => {
-                                const nodeColor = getColor(node.color);
-                                return (
-                                    <motion.div
-                                        key={node.id}
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.4, delay: i * 0.08 }}
-                                        className="absolute rounded-xl border text-center px-3 py-2.5 cursor-default transition-all hover:scale-[1.03]"
-                                        style={{
-                                            left: node.x,
-                                            top: node.y,
-                                            width: node.width || 250,
-                                            height: 85,
-                                            borderColor: `${nodeColor}40`,
-                                            background: `linear-gradient(135deg, ${nodeColor}10, ${nodeColor}05)`,
-                                            boxShadow: `0 0 20px ${nodeColor}10`,
-                                        }}
+                            <defs>
+                                {["cyan", "danger", "success", "warning", "purple"].map((c) => (
+                                    <marker
+                                        key={c}
+                                        id={`arrow-${c}`}
+                                        viewBox="0 0 10 7"
+                                        refX="10"
+                                        refY="3.5"
+                                        markerWidth="8"
+                                        markerHeight="6"
+                                        orient="auto-start-reverse"
                                     >
-                                        <div
-                                            className="text-sm font-bold font-mono"
-                                            style={{ color: nodeColor }}
-                                        >
-                                            {node.label}
-                                        </div>
-                                        {node.sublabel && (
-                                            <div className="text-xs text-muted mt-1.5 leading-tight">
-                                                {node.sublabel}
-                                            </div>
+                                        <path d="M 0 0 L 10 3.5 L 0 7 z" fill={getColor(c)} />
+                                    </marker>
+                                ))}
+                                {["cyan", "danger", "success", "warning", "purple"].map((c) => (
+                                    <linearGradient key={`glow-${c}`} id={`glow-${c}`} x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stopColor={getColor(c)} stopOpacity="0.6" />
+                                        <stop offset="100%" stopColor={getColor(c)} stopOpacity="0.1" />
+                                    </linearGradient>
+                                ))}
+                            </defs>
+
+                            {/* Edges */}
+                            {edges.map((edge, i) => {
+                                const fromNode = nodes.find((n) => n.id === edge.from)!;
+                                const toNode = nodes.find((n) => n.id === edge.to)!;
+                                const fromC = getNodeCenter(fromNode);
+                                const toC = getNodeCenter(toNode);
+                                const fromBottom = { x: fromC.x, y: fromNode.y + 85 };
+                                const toTop = { x: toC.x, y: toNode.y };
+
+                                // Curve for diagonal lines
+                                const isDiagonal = Math.abs(fromC.x - toC.x) > 50;
+                                const midY = (fromBottom.y + toTop.y) / 2;
+
+                                return (
+                                    <g key={i}>
+                                        {isDiagonal ? (
+                                            <path
+                                                d={`M ${fromBottom.x} ${fromBottom.y} C ${fromBottom.x} ${midY}, ${toTop.x} ${midY}, ${toTop.x} ${toTop.y}`}
+                                                stroke={getColor(edge.color)}
+                                                strokeWidth="2"
+                                                strokeDasharray={edge.color === "danger" ? "6 4" : "none"}
+                                                markerEnd={`url(#arrow-${edge.color})`}
+                                                opacity={0.7}
+                                            />
+                                        ) : (
+                                            <line
+                                                x1={fromBottom.x}
+                                                y1={fromBottom.y}
+                                                x2={toTop.x}
+                                                y2={toTop.y}
+                                                stroke={getColor(edge.color)}
+                                                strokeWidth="2"
+                                                markerEnd={`url(#arrow-${edge.color})`}
+                                                opacity={0.7}
+                                            />
                                         )}
-                                    </motion.div>
+                                        {edge.label && (
+                                            <text
+                                                x={(fromBottom.x + toTop.x) / 2 + (fromC.x < toC.x ? -60 : 10)}
+                                                y={midY - 5}
+                                                fill={getColor(edge.color)}
+                                                fontSize="12"
+                                                fontFamily="'JetBrains Mono', monospace"
+                                                opacity={0.8}
+                                            >
+                                                {edge.label}
+                                            </text>
+                                        )}
+                                    </g>
                                 );
                             })}
-                        </div>
+
+                            {/* Nodes inside standard SVG foreignObject */}
+                            {nodes.map((node, i) => {
+                                const nodeColor = getColor(node.color);
+                                const nodeWidth = node.width || 250;
+                                return (
+                                    <foreignObject
+                                        key={node.id}
+                                        x={node.x - 10}
+                                        y={node.y - 10}
+                                        width={nodeWidth + 20}
+                                        height={110}
+                                        style={{ overflow: "visible" }}
+                                    >
+                                        {/* To prevent SVG clipping bugs, style overflow correctly */}
+                                        <div className="w-full h-full pt-[10px] px-[10px] flex justify-center items-start">
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 0.4, delay: i * 0.08 }}
+                                                className="w-full rounded-xl border text-center px-3 py-2.5 cursor-default transition-transform hover:scale-[1.03]"
+                                                style={{
+                                                    height: 85,
+                                                    borderColor: `${nodeColor}40`,
+                                                    background: `linear-gradient(135deg, ${nodeColor}10, ${nodeColor}05)`,
+                                                    boxShadow: `0 0 20px ${nodeColor}10`,
+                                                }}
+                                            >
+                                                <div
+                                                    className="text-sm font-bold font-mono"
+                                                    style={{ color: nodeColor }}
+                                                >
+                                                    {node.label}
+                                                </div>
+                                                {node.sublabel && (
+                                                    <div className="text-xs text-muted mt-1.5 leading-tight">
+                                                        {node.sublabel}
+                                                    </div>
+                                                )}
+                                            </motion.div>
+                                        </div>
+                                    </foreignObject>
+                                );
+                            })}
+                        </svg>
                     </div>
                 </motion.div>
 
