@@ -322,7 +322,7 @@ export default function EvidenceSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                        className="glass rounded-2xl flex flex-col h-full overflow-hidden"
+                        className="glass rounded-2xl flex flex-col h-full max-h-[600px] lg:max-h-[750px] overflow-hidden"
                     >
                         {/* Transcript header */}
                         <div className="flex items-center justify-between px-5 py-4 border-b border-border">
