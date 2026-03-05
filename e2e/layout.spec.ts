@@ -53,7 +53,7 @@ test.describe('Layout Formatting and Spacing', () => {
 
     test('Centering of Architecture content', async ({ page }) => {
         // The decision tree SVG container
-        const treeContainer = page.locator('#architecture .flex.justify-center');
+        const treeContainer = page.locator('#architecture .w-full.relative.mx-auto.flex.justify-center.overflow-x-auto');
         await expect(treeContainer).toBeVisible();
     });
 });
